@@ -27,8 +27,8 @@
 ## <h2 id="looks" >dpcreator Looks Like</h2>
 
 <p text-align=left>
-  <img src="https://user-images.githubusercontent.com/91304976/226381650-79f97144-7ff3-46d4-a085-048585a5011e.png" width="400" height="" alt="dpcreator_home"/>
-   
+  <img src="https://github.com/Nik4Furi/dpcreator/assets/91304976/106097a0-cd10-4113-a6c7-56436ada2c1e" width="400" height="" alt="dpcreator_home"/>
+
 </p>
 
 <a href="#dpcreator">Go Home </a>
@@ -37,6 +37,7 @@
 ## <h2 id="stack" >Tech Stack </h2>
 
 **Client:** React, Bootstrap <a href="https://github.com/Nik4Furi/dpcreator">Frontend</a>
+
 **Server:** NodeJS, ExpressJS, MongoDB <a href="https://github.com/Nik4Furi/dpcreator_api">Backend</a>
 
 <a href="#dpcreator">Go Home </a>
