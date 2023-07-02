@@ -31,7 +31,7 @@ const Login = () => {
         })
         const data = await res.json();
 
-        console.log('check the data ', data);
+        setForm({email:'',password:''})
 
         if (!data) {
             toast.warning("Check your connection or data");
@@ -54,6 +54,8 @@ const Login = () => {
             setLoading(false);
             return;
         }
+
+       
 
     }
     return (

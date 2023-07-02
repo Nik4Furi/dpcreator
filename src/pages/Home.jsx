@@ -15,13 +15,9 @@ function Home() {
   // ------------------- Show the images according to the users -------------------X
   useEffect(() => {
     dispatch(ShowAllImgs()); // Show all images from database
-    // window.location.reload();
   },[dispatch])
 
-  const handleRefresh = ()=> dispatch(ShowAllImgs()); 
-
   const imagesData = useSelector((state) => state.uploadimg);
-  console.log('check img data ', imagesData[0]);
 
   return (
     <>
@@ -29,6 +25,7 @@ function Home() {
 
         <h2><span className="text-highlight text-capitalize"> dpCreators </span> is platform where users can upload their images, and save with title and description</h2>
         <p> helps the users to upload their pics with title and description and count their views in a particular images, it can help the users like, if needed to upload an image in twitter, instagram or any where ,can save with title and description and upload that time! </p>
+        <p style={{background : "#dfdfce"}}><span className="text-danger">NOTE: </span>After upload a new image you need to <a href="/">refresh</a> it, I might be resolve this issue, but I haven't enough time to do it!, So Sorry  🙏 For This LOOPHOLE ➰</p>
 
 
         <div className="container my-2" style={{ minHeight: "50vh" }}>
@@ -37,7 +34,7 @@ function Home() {
           <h3>Check out your image stuff, and add something new is better than ever!</h3>
           <div className='position-relative'>
             <Link to='/upload'><button className="btn btn-danger my-2 mx-2">Add New Image</button></Link>
-            <button onClick={(() => handleRefresh())} className="btn btn-secondary  my-2">Refresh To See Nothing</button>
+            
           </div>
 
           <h6>{ imagesData[0]?.length===0 ? "You haven't to show here, add now!" : ""}</h6>

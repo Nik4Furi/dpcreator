@@ -36,13 +36,12 @@ const AddImage = () => {
 
         dispatch(UploadImg(myForm));
 
-        toast.info('Please wait we check your file is uploading or not...');
-
-      
+        toast.info('Please wait we check your file is uploading or not...');      
 
         setTimeout(() => {            
-            navigate('/')
-        }, 2000);
+            navigate(0)
+            // navigate('/')
+        }, 3000);
 
         setDescription('');
         setFile('');

@@ -42,7 +42,6 @@ const Register = () => {
             body : JSON.stringify(form)
         })
         const data = await res.json();
-        console.log('check the data ',data);
 
         if (!data) {
             toast.warning("Check your connection or data");

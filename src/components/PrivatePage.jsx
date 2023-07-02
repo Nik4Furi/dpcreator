@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
 
+//---------------- Packages
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
+
 //--------------------- Components Specific Stuff -------------------X
+import Loading from './Loading';
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { useNavigate } from 'react-router-dom'
-import Loading from './Loading';
-import { toast } from 'react-toastify';
 
 function PrivatePage({ children }) {
   const navigate = useNavigate();
 
   //----------------- Check the user is already login or not
   const [loading, setLoading] = useState(false); //Loading a button upto our work is not done
-  const [user,setUser] = useState();
 
   const fetchUserInfo = async () => {
     const token = sessionStorage.getItem('token');
@@ -25,7 +26,6 @@ function PrivatePage({ children }) {
       }
     })
     const data = await res.json();
-    console.log('check the data ',data);
 
     if (!data) {
       toast.warning("Check your connection or data");
@@ -35,7 +35,6 @@ function PrivatePage({ children }) {
     }
 
     if (data.success == true) {
-      setUser(data.user);
       navigate('/');
       setLoading(false);
       return;
@@ -46,17 +45,13 @@ function PrivatePage({ children }) {
       setLoading(false);
       return;
     }
-
-
   }
+
+  
   useEffect(() => {
     //Now call the api to check the user is valid
-    fetchUserInfo();
-
-   
+    fetchUserInfo();   
   }, []);
-
-  console.log('check user details ',user);
 
   return (
     <>
